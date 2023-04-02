@@ -12,11 +12,15 @@ export default (app) => {
 const createTuit = (req, res) => {
 	const newTuit = req.body;
 	newTuit._id = (new Date()).getTime();
-	newTuit.numLikes = 0;
-	newTuit.numDislikes = 0;
+	newTuit.profileImg = "profile_nyp.png"
+	newTuit.userName = "New York Post"
+	newTuit.handle = "@nypost"
+	newTuit.timeAgo = "1h"
 	newTuit.numComments = 0;
 	newTuit.numRetweets = 0;
+	newTuit.numLikes = 0;
 	newTuit.liked = false;
+	newTuit.numDislikes = 0;
 	tuits.push(newTuit);
 	res.json(newTuit);
 };
